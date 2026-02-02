@@ -1,5 +1,4 @@
 import type { Goal } from '../types'
-import { calculateGoalProgress } from '../utils/calculations'
 
 interface GoalProgressProps {
   goal: Goal
@@ -7,21 +6,12 @@ interface GoalProgressProps {
   compact?: boolean
 }
 
-export function GoalProgress({ goal, showCalculation = true, compact = false }: GoalProgressProps) {
-  const { cost, saved, period, contribution } = goal
+export function GoalProgress({ goal, compact = false }: GoalProgressProps) {
+  const { cost, saved } = goal
   const percent = cost > 0 ? Math.min(100, Math.round((saved / cost) * 100)) : 0
   const remaining = Math.max(0, cost - saved)
   const savedPercent = cost > 0 ? (saved / cost) * 100 : 0
   const remainingPercent = cost > 0 ? (remaining / cost) * 100 : 100
-  const { periodsNeeded, targetDate } = calculateGoalProgress(
-    cost,
-    saved,
-    contribution,
-    period
-  )
-
-  const formatDate = (d: Date) =>
-    d.toLocaleDateString('ru-RU', { day: 'numeric', month: 'long', year: 'numeric' })
 
   if (compact) {
     return (
@@ -82,14 +72,6 @@ export function GoalProgress({ goal, showCalculation = true, compact = false }: 
           </p>
         )}
       </div>
-
-      {showCalculation && contribution > 0 && remaining > 0 && (
-        <div className="calculation-block">
-          <p className="calculation-single">
-            Добавь ещё немного — продолжай копить ещё <strong>{periodsNeeded} {period === 'month' ? 'месяцев' : period === 'week' ? 'недель' : 'дней'}</strong> до <strong>{formatDate(targetDate)}</strong>, и ты достигнешь цели!
-          </p>
-        </div>
-      )}
     </div>
   )
 }
