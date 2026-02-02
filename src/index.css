@@ -1,0 +1,1320 @@
+/* ========== Base (детский стиль 8–16 лет) ========== */
+:root {
+  font-family: 'Nunito', 'Segoe UI', system-ui, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #1e293b;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --kid-bg: #faf5ff;
+  --kid-accent: #7c3aed;
+  --kid-accent-soft: #e9d5ff;
+  --kid-yellow: #fbbf24;
+  --kid-mint: #6ee7b7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  background: linear-gradient(180deg, #faf5ff 0%, #ede9fe 45%, #ddd6fe 70%, #e0e7ff 100%);
+  background-attachment: fixed;
+}
+
+#root {
+  min-height: 100dvh;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+/* ========== Layout ========== */
+.page {
+  min-height: 100dvh;
+  padding: 1.25rem 1.5rem 2rem;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.home-page .page-main {
+  padding-top: 0.5rem;
+}
+
+.page-header {
+  margin-bottom: 1.5rem;
+}
+
+.page-header-with-plus {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.page-header-with-plus .app-title {
+  margin: 0;
+}
+
+.header-plus {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 3px solid #7c3aed;
+  background: #f5f3ff;
+  color: #7c3aed;
+  font-size: 1.9rem;
+  font-weight: 300;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: background 0.2s, color 0.2s, transform 0.15s;
+}
+
+.header-plus:hover {
+  background: #7c3aed;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Шапка с иконками (обложка + новая мечта) */
+.page-header-icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.page-header-icons .page-title {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+}
+
+.header-icons {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.header-icon-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid #4f46e5;
+  background: white;
+  color: #4f46e5;
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.header-icon-btn:hover {
+  background: #4f46e5;
+  color: white;
+}
+
+.header-icon-btn .header-icon {
+  font-size: 1.25rem;
+}
+
+/* Обёртка для центрирования кнопки «Пополнение» */
+.detail-add-wrap {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+/* Нижняя кнопка «Пополнение» — круглая, компактная */
+.detail-add-contribution {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  color: #4f46e5;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.detail-add-contribution:hover {
+  transform: scale(1.05);
+}
+
+.detail-add-contribution:active {
+  transform: scale(0.95);
+}
+
+.detail-add-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%);
+  color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 1;
+  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.35);
+  transition: box-shadow 0.2s ease;
+}
+
+.detail-add-contribution:hover .detail-add-icon {
+  box-shadow: 0 6px 20px rgba(79, 70, 229, 0.45);
+}
+
+.detail-add-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #64748b;
+  font-family: inherit;
+}
+
+.app-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #5b21b6;
+  margin: 0 0 0.25rem;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.app-subtitle {
+  font-size: 1rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.page-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.back-button {
+  display: inline-block;
+  background: none;
+  border: none;
+  color: #4f46e5;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  padding: 0;
+  text-decoration: none;
+}
+
+.back-button:hover {
+  text-decoration: underline;
+}
+
+.back-button-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  margin-bottom: 0;
+  border-radius: 50%;
+  transition: background 0.2s, color 0.2s;
+}
+
+.back-button-icon:hover {
+  background: #eef2ff;
+  text-decoration: none;
+}
+
+.back-button-icon svg {
+  flex-shrink: 0;
+}
+
+/* ========== Buttons (крупные, закруглённые для детей) ========== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 1.6rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 20px;
+  border: none;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%);
+  color: white;
+  box-shadow: 0 6px 20px rgba(124, 58, 237, 0.45);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.5);
+}
+
+.btn-secondary {
+  background: #f5f3ff;
+  color: #5b21b6;
+  border: 2px solid #c4b5fd;
+}
+
+.btn-secondary:hover {
+  background: #ede9fe;
+}
+
+.btn-large {
+  padding: 1.15rem 1.75rem;
+  font-size: 1.2rem;
+  border-radius: 22px;
+}
+
+/* ========== Empty state ========== */
+.empty-state {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: linear-gradient(180deg, #eef2ff 0%, #f8fafc 100%);
+  border-radius: 20px;
+  border: 2px dashed #c7d2fe;
+}
+
+.empty-state-minimal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40vh;
+}
+
+.empty-state-minimal .btn-large {
+  min-width: 260px;
+}
+
+/* Пустое состояние для ребёнка: яркий блок + большая иллюстрация */
+.empty-state-kid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  padding: 2.5rem 1.5rem;
+  background: linear-gradient(180deg, #f5f3ff 0%, #ede9fe 100%);
+  border-radius: 28px;
+  border: 3px dashed #a78bfa;
+  box-shadow: 0 8px 32px rgba(124, 58, 237, 0.12);
+}
+
+.empty-state-illustration {
+  font-size: 5rem;
+  margin-bottom: 1.25rem;
+  line-height: 1;
+  filter: drop-shadow(0 4px 8px rgba(124, 58, 237, 0.2));
+}
+
+.empty-state-lead {
+  font-size: 1.25rem;
+  color: #5b21b6;
+  font-weight: 700;
+  margin: 0 0 1.75rem;
+  text-align: center;
+  max-width: 300px;
+  line-height: 1.4;
+}
+
+.empty-state-kid .btn-large {
+  min-width: 280px;
+  padding: 1.2rem 1.75rem;
+  font-size: 1.2rem;
+  border-radius: 22px;
+}
+
+/* Приветствие на главной над карточкой */
+.home-welcome {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #5b21b6;
+  margin: 0 0 1rem;
+  text-align: center;
+  padding: 0.5rem 0;
+}
+
+.empty-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #3730a3;
+  margin: 0 0 0.75rem;
+}
+
+.empty-text {
+  color: #64748b;
+  margin: 0 0 1.5rem;
+  max-width: 280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ========== Goals carousel (перелистывание как на iPhone) ========== */
+.goals-carousel {
+  margin: 0 -1.25rem 1rem;
+  padding-bottom: 0.5rem;
+}
+
+.goals-carousel-track {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  gap: 1rem;
+  padding: 0.5rem 1rem 0.5rem 1.25rem;
+  scrollbar-width: none;
+}
+
+.goals-carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.goal-carousel-card-wrap {
+  flex: 0 0 82%;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+  min-width: 0;
+}
+
+.goal-carousel-card {
+  display: block;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.goal-carousel-card:hover,
+.goal-carousel-card:active {
+  transform: scale(0.98);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.goal-carousel-card.is-completed {
+  opacity: 0.85;
+  border: 2px solid #22c55e;
+}
+
+.goal-carousel-card.is-completed .goal-carousel-image,
+.goal-carousel-card.is-completed .goal-carousel-placeholder {
+  filter: saturate(0.7);
+}
+
+.goal-carousel-badge {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 1;
+  padding: 0.35rem 0.65rem;
+  background: #22c55e;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(34, 197, 94, 0.4);
+}
+
+.goal-carousel-card {
+  position: relative;
+}
+
+.goal-carousel-image {
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  background: #f1f5f9;
+}
+
+.goal-carousel-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.goal-carousel-placeholder {
+  aspect-ratio: 16/10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  background: #e2e8f0;
+}
+
+.goal-carousel-content {
+  padding: 1rem 1.25rem 1.25rem;
+}
+
+.goal-carousel-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+}
+
+.goals-carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  padding: 0 0.5rem;
+}
+
+.goals-carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: #cbd5e1;
+  padding: 0;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.goals-carousel-dot:hover {
+  background: #94a3b8;
+}
+
+.goals-carousel-dot.is-active {
+  background: #4f46e5;
+  transform: scale(1.2);
+}
+
+/* ========== Goals list (для совместимости, если нужен вертикальный список) ========== */
+.goals-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+}
+
+.goal-card {
+  position: relative;
+  margin-bottom: 1rem;
+  border-radius: 16px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.goal-card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.goal-card-image {
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  background: #f1f5f9;
+}
+
+.goal-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.goal-card-placeholder {
+  aspect-ratio: 16/10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  background: #e2e8f0;
+}
+
+.goal-card-content {
+  padding: 1rem 1.25rem 2.5rem;
+}
+
+.goal-card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+}
+
+.goal-card-edit {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.add-goal-row {
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+/* ========== Goal progress ========== */
+.goal-progress {
+  margin: 0;
+}
+
+.progress-charts {
+  margin-bottom: 1rem;
+}
+
+/* Круговая диаграмма прогресса */
+.progress-circle {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress-circle-inner {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #f8fafc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress-circle-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #4f46e5;
+}
+
+/* Горизонтальная полоска: накоплено | осталось */
+.progress-stacked-bar {
+  position: relative;
+  display: flex;
+  height: 40px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #e2e8f0;
+}
+
+.progress-stacked-saved {
+  background: linear-gradient(90deg, #818cf8 0%, #4f46e5 100%);
+  transition: width 0.4s ease;
+}
+
+.progress-stacked-remaining {
+  background: #cbd5e1;
+  transition: width 0.4s ease;
+}
+
+.progress-stacked-label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1e293b;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.9), 0 1px 2px rgba(255, 255, 255, 0.8);
+  pointer-events: none;
+  padding: 0 0.5rem;
+  text-align: center;
+}
+
+.progress-remaining-under {
+  margin: 0.35rem 0 0;
+  font-size: 0.95rem;
+  color: #64748b;
+}
+
+.progress-inspiring {
+  margin: 0.5rem 0 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #4f46e5;
+  text-align: center;
+}
+
+.progress-bar-wrap {
+  height: 12px;
+  background: #e2e8f0;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #818cf8 0%, #4f46e5 100%);
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  margin: 0 0 0.25rem;
+  font-size: 0.95rem;
+}
+
+.progress-motivation {
+  margin: 0 0 0.5rem;
+  font-size: 0.95rem;
+  color: #4f46e5;
+  font-weight: 600;
+}
+
+.progress-remaining {
+  margin: 0 0 0.5rem;
+  font-size: 0.95rem;
+  color: #64748b;
+}
+
+.calculation-block {
+  margin-top: 0.75rem;
+  padding: 0.75rem;
+  background: #f1f5f9;
+  border-radius: 12px;
+  font-size: 0.9rem;
+}
+
+.calculation-block p {
+  margin: 0 0 0.25rem;
+}
+
+.calculation-single {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.calculation-short {
+  margin: 0 0 0.5rem;
+  font-size: 0.9rem;
+}
+
+.calculation-weeks-infographic {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.6rem;
+  background: #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+.weeks-icon {
+  font-size: 1rem;
+}
+
+.weeks-value {
+  white-space: nowrap;
+}
+
+.calculation-sub {
+  color: #64748b;
+  font-size: 0.85rem;
+}
+
+/* Блок расчёта — «если откладывать… то достигну цели» + иконки */
+.calculation-clear {
+  margin-top: 0.75rem;
+}
+
+.calculation-line {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 0.5rem;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.calc-ico {
+  flex-shrink: 0;
+  display: inline-block;
+}
+
+.calc-ico-money {
+  width: 22px;
+  height: 22px;
+  background: radial-gradient(circle at 35% 35%, #fde047, #eab308);
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(234, 179, 8, 0.4);
+}
+
+.calc-ico-finish {
+  width: 22px;
+  height: 22px;
+  background: #22c55e;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 70%, 0 100%);
+  box-shadow: 0 1px 3px rgba(34, 197, 94, 0.4);
+}
+
+.calc-ico-calendar {
+  width: 20px;
+  height: 20px;
+  background: #4f46e5;
+  border-radius: 4px;
+  position: relative;
+}
+
+.calc-ico-calendar::before {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 1px;
+}
+
+.calculation-row {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  color: #475569;
+}
+
+.calculation-dot {
+  color: #94a3b8;
+  margin: 0 0.15rem;
+}
+
+/* ========== Goal form ========== */
+.goal-form {
+  background: white;
+  padding: 1.25rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.35rem;
+  color: #334155;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  font-size: 1rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  background: #f8fafc;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #818cf8;
+  background: white;
+}
+
+.file-input {
+  font-size: 0.9rem;
+}
+
+.photo-preview {
+  margin-top: 0.5rem;
+}
+
+.photo-preview img {
+  max-width: 100%;
+  max-height: 200px;
+  border-radius: 12px;
+  display: block;
+}
+
+.link-button {
+  background: none;
+  border: none;
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 0.35rem;
+  padding: 0;
+  text-decoration: underline;
+}
+
+.link-button:hover {
+  color: #4f46e5;
+}
+
+.calculation-preview {
+  margin: 1rem 0;
+  padding: 0.75rem;
+  background: #eef2ff;
+  border-radius: 12px;
+  font-size: 0.9rem;
+}
+
+.calculation-text {
+  margin: 0 0 0.25rem;
+}
+
+.form-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.form-actions .btn-primary {
+  flex: 1;
+  min-width: 140px;
+}
+
+/* ========== Goal wizard (онбординг) ========== */
+.goal-wizard {
+  display: flex;
+  flex-direction: column;
+  min-height: 60vh;
+}
+
+.wizard-progress {
+  height: 6px;
+  background: #e2e8f0;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.wizard-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #818cf8 0%, #4f46e5 100%);
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+
+.wizard-step {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.wizard-question {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 1.5rem;
+  line-height: 1.3;
+}
+
+.wizard-input,
+.wizard-select {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  font-size: 1.1rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  background: #f8fafc;
+}
+
+.wizard-input:focus,
+.wizard-select:focus {
+  outline: none;
+  border-color: #818cf8;
+  background: white;
+}
+
+.wizard-select {
+  cursor: pointer;
+}
+
+.wizard-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.wizard-input-wrap .wizard-input {
+  flex: 1;
+}
+
+.wizard-currency {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.wizard-savings-plan {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.wizard-savings-plan .wizard-select {
+  width: 100%;
+}
+
+.wizard-photo {
+  margin-top: 0.5rem;
+}
+
+.wizard-file-input {
+  display: none;
+}
+
+.wizard-photo-preview {
+  margin-top: 0.5rem;
+}
+
+.wizard-photo-preview img {
+  max-width: 100%;
+  max-height: 240px;
+  border-radius: 12px;
+  display: block;
+}
+
+.wizard-photo-preview .link-button {
+  margin-top: 0.5rem;
+}
+
+.wizard-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.wizard-actions .btn-primary {
+  flex: 1;
+}
+
+.wizard-actions .btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.wizard-page .page-header {
+  margin-bottom: 1rem;
+}
+
+/* ========== Detail page ========== */
+.detail-photo {
+  width: 100%;
+  aspect-ratio: 16/10;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #e2e8f0;
+  margin-bottom: 1rem;
+}
+
+.detail-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.detail-photo.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+}
+
+.detail-content {
+  margin-bottom: 1.5rem;
+}
+
+.detail-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.detail-actions .btn {
+  width: 100%;
+}
+
+/* ========== Parent tip ========== */
+.parent-tip {
+  margin-top: 2rem;
+  padding: 1rem;
+  background: #fef3c7;
+  border-radius: 12px;
+  border-left: 4px solid #f59e0b;
+}
+
+.parent-tip-title {
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin: 0 0 0.35rem;
+  color: #92400e;
+}
+
+.parent-tip-text {
+  font-size: 0.85rem;
+  color: #78350f;
+  margin: 0;
+  line-height: 1.45;
+}
+
+/* ========== Modal ========== */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.modal-box {
+  background: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  max-width: 340px;
+  width: 100%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.modal-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 0.75rem;
+}
+
+.modal-text {
+  font-size: 0.95rem;
+  color: #475569;
+  margin: 0 0 1.25rem;
+  line-height: 1.5;
+}
+
+.modal-box .btn {
+  width: 100%;
+}
+
+.modal-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.modal-input-wrap .modal-input,
+.modal-input-wrap input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  font-size: 1.1rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+}
+
+.modal-input-wrap .wizard-currency {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.modal-actions .btn {
+  flex: 1;
+}
+
+/* Мотивационная фраза после пополнения */
+.motivation-toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 90%;
+  padding: 1rem 1.5rem;
+  background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%);
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(79, 70, 229, 0.4);
+  z-index: 1100;
+  cursor: pointer;
+  animation: toast-in 0.3s ease;
+}
+
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.congrats-toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 90%;
+  padding: 1rem 1.5rem;
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 16px;
+  z-index: 1100;
+  cursor: pointer;
+  animation: toast-in 0.3s ease;
+}
+
+.congrats-toast.kid-toast {
+  font-size: 1.05rem;
+  padding: 1.25rem 1.5rem;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #818cf8 0%, #6366f1 50%, #a78bfa 100%);
+  box-shadow: 0 8px 28px rgba(99, 102, 241, 0.45);
+}
+
+/* ========== Wallpaper ========== */
+.wallpaper-page .page-subtitle {
+  font-size: 0.95rem;
+  color: #64748b;
+  margin: 0.5rem 0 0;
+}
+
+.wallpaper-main {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+/* Формат телефона 1080x1920 — на экране показываем масштабированно */
+.wallpaper-frame {
+  width: 360px;
+  height: 640px;
+  border-radius: 32px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  border: 8px solid #1e293b;
+}
+
+.wallpaper-preview {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: #1e293b;
+}
+
+.wallpaper-preview.wallpaper-phone {
+  aspect-ratio: 9 / 16;
+}
+
+.wallpaper-image {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.wallpaper-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.wallpaper-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  background: linear-gradient(135deg, #334155 0%, #1e293b 100%);
+  color: #94a3b8;
+}
+
+.wallpaper-overlay {
+  padding: 1rem 1.25rem 1.5rem;
+  background: linear-gradient(0deg, rgba(15, 23, 42, 0.95) 0%, transparent 100%);
+  color: white;
+}
+
+.wallpaper-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0 0 0.35rem;
+}
+
+.wallpaper-progress {
+  font-size: 0.95rem;
+  margin: 0 0 0.5rem;
+  opacity: 0.95;
+}
+
+.wallpaper-bar-wrap {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.wallpaper-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #818cf8 0%, #6366f1 100%);
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
